@@ -1,0 +1,10 @@
+.result-container {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  background-color: rgb(39, 33, 33);
+}
+
+.result {
+  color: #fff;
+}
