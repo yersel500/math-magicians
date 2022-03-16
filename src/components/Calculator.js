@@ -1,6 +1,7 @@
 import './Calculator.css';
 import PropTypes from 'prop-types';
 import React from 'react';
+import calculate from '../logic/calculate';
 
 const ShowResult = (props) => {
   const { result } = props;
@@ -17,7 +18,7 @@ ShowResult.propTypes = { result: PropTypes.number };
 const KeyCalc = (props) => {
   const { eachKey, myClass } = props;
   return (
-    <input type="button" className={`eachKey my-${eachKey} ${myClass}`} value={eachKey} />
+    <input type="button" className={`eachKey my-${eachKey} ${myClass}`} value={eachKey} onClick={handleOperation} />
   );
 };
 
@@ -33,6 +34,11 @@ KeyCalc.propTypes = {
 export default class Calculator extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      total: null,
+      next: null,
+      operation: null,
+    }
     this.myKeys = [
       {
         eachKey: 'AC',
