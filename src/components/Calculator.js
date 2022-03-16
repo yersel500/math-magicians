@@ -2,7 +2,7 @@ import './Calculator.css';
 import PropTypes from 'prop-types';
 import React from 'react';
 
-export const ShowResult = (props) => {
+const ShowResult = (props) => {
   const { result } = props;
   return (
     <div className="result-container">
@@ -14,7 +14,7 @@ export const ShowResult = (props) => {
 ShowResult.defaultProps = { result: 0 };
 ShowResult.propTypes = { result: PropTypes.number };
 
-export const KeyCalc = (props) => {
+const KeyCalc = (props) => {
   const { eachKey, myClass } = props;
   return (
     <input type="button" className={`eachKey my-${eachKey} ${myClass}`} value={eachKey} />
@@ -30,7 +30,7 @@ KeyCalc.propTypes = {
   myClass: PropTypes.string,
 };
 
-export class Calculator extends React.Component {
+export default class Calculator extends React.Component {
   constructor(props) {
     super(props);
     this.myKeys = [
@@ -47,7 +47,7 @@ export class Calculator extends React.Component {
         myClass: 'general',
       },
       {
-        eachKey: '/',
+        eachKey: '÷',
         myClass: 'operator',
       },
       {
