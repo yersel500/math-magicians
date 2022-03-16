@@ -1,29 +1,32 @@
-import './Calculator.css'
+import './Calculator.css';
 import PropTypes from 'prop-types';
 import React from 'react';
 
 export const ShowResult = (props) => {
-  const {result} = props;
+  const { result } = props;
   return (
-  <div className='result-container'>
-    <p className='result'>{result}</p>
-  </div>);
-}
+    <div className="result-container">
+      <p className="result">{result}</p>
+    </div>
+  );
+};
 
-ShowResult.defaultProps = { result: 0};
-ShowResult.propTypes = { result: PropTypes.number};
+ShowResult.defaultProps = { result: 0 };
+ShowResult.propTypes = { result: PropTypes.number };
 
 export const KeyCalc = (props) => {
   const { eachKey } = props;
   return (
-    <input type='button' className='eachKey'>{eachKey}</input>
+    <input type="button" className="eachKey" value={eachKey} />
   );
-}
+};
 
-class Calculator extends React.Component {
+KeyCalc.defaultProps = { eachKey: '0' };
+KeyCalc.propTypes = { eachKey: PropTypes.string };
+
+export class Calculator extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { operation: 0};
     this.myKeys = [
       {
         eachKey: 'AC',
@@ -85,6 +88,12 @@ class Calculator extends React.Component {
     ];
   }
 
-  
+  render() {
+    return (
+      <div className="keyContainer">
+        {this.myKeys.map((element) => (
+          <KeyCalc eachKey={element.eachKey} key={element.eachKey} />))}
+      </div>
+    );
+  }
 }
-
