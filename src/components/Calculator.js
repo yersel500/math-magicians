@@ -1,6 +1,6 @@
 import './Calculator.css';
 import PropTypes from 'prop-types';
-import React from 'react';
+import React, { useState } from 'react';
 import calculate from '../logic/calculate';
 
 const ShowResult = (props) => {
@@ -33,109 +33,107 @@ KeyCalc.propTypes = {
   myClick: PropTypes.func,
 };
 
-export default class Calculator extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      total: null,
-      next: null,
-      operation: null,
-    };
-    this.myKeys = [
-      {
-        eachKey: 'AC',
-        myClass: 'general',
-      },
-      {
-        eachKey: '+/-',
-        myClass: 'general',
-      },
-      {
-        eachKey: '%',
-        myClass: 'general',
-      },
-      {
-        eachKey: '÷',
-        myClass: 'operator',
-      },
-      {
-        eachKey: '7',
-        myClass: 'number',
-      },
-      {
-        eachKey: '8',
-        myClass: 'number',
-      },
-      {
-        eachKey: '9',
-        myClass: 'number',
-      },
-      {
-        eachKey: 'x',
-        myClass: 'operator',
-      },
-      {
-        eachKey: '4',
-        myClass: 'number',
-      },
-      {
-        eachKey: '5',
-        myClass: 'number',
-      },
-      {
-        eachKey: '6',
-        myClass: 'number',
-      },
-      {
-        eachKey: '-',
-        myClass: 'operator',
+const Calculator = () => {
+  const [myState, SetMyState] = useState({
+    total: null,
+    next: null,
+    operation: null,
+  });
 
-      },
-      {
-        eachKey: '1',
-        myClass: 'number',
+  const myKeys = [
+    {
+      eachKey: 'AC',
+      myClass: 'general',
+    },
+    {
+      eachKey: '+/-',
+      myClass: 'general',
+    },
+    {
+      eachKey: '%',
+      myClass: 'general',
+    },
+    {
+      eachKey: '÷',
+      myClass: 'operator',
+    },
+    {
+      eachKey: '7',
+      myClass: 'number',
+    },
+    {
+      eachKey: '8',
+      myClass: 'number',
+    },
+    {
+      eachKey: '9',
+      myClass: 'number',
+    },
+    {
+      eachKey: 'x',
+      myClass: 'operator',
+    },
+    {
+      eachKey: '4',
+      myClass: 'number',
+    },
+    {
+      eachKey: '5',
+      myClass: 'number',
+    },
+    {
+      eachKey: '6',
+      myClass: 'number',
+    },
+    {
+      eachKey: '-',
+      myClass: 'operator',
 
-      },
-      {
-        eachKey: '2',
-        myClass: 'number',
+    },
+    {
+      eachKey: '1',
+      myClass: 'number',
 
-      },
-      {
-        eachKey: '3',
-        myClass: 'number',
+    },
+    {
+      eachKey: '2',
+      myClass: 'number',
 
-      },
-      {
-        eachKey: '+',
-        myClass: 'operator',
+    },
+    {
+      eachKey: '3',
+      myClass: 'number',
 
-      },
-      {
-        eachKey: '0',
-        myClass: 'number',
+    },
+    {
+      eachKey: '+',
+      myClass: 'operator',
 
-      },
-      {
-        eachKey: '.',
-        myClass: 'general',
+    },
+    {
+      eachKey: '0',
+      myClass: 'number',
 
-      },
-      {
-        eachKey: '=',
-        myClass: 'operator',
+    },
+    {
+      eachKey: '.',
+      myClass: 'general',
 
-      },
-    ];
-  }
+    },
+    {
+      eachKey: '=',
+      myClass: 'operator',
 
-  handleOperation = (e) => {
-    const updatedState = calculate(this.state, e.target.value);
-    this.setState(updatedState);
+    },
+  ];
+
+  const handleOperation = (e) => {
+    const updatedState = calculate(myState, e.target.value);
+    SetMyState(updatedState);
   };
 
-  showNewTotal = () => {
-    const { total, next } = this.state;
+  const showNewTotal = () => {
+    const { total, next } = myState;
     if (total === null && next === null) {
       return '0';
     }
@@ -145,25 +143,24 @@ export default class Calculator extends React.Component {
     return next;
   };
 
-  render() {
-    const newValue = this.showNewTotal();
-    return (
-      <div className="mayorContainer">
-        <div className="calContainer">
-          <ShowResult result={newValue} />
-          <div className="keyContainer">
-            {this.myKeys.map((element) => (
-              <KeyCalc
-                eachKey={element.eachKey}
-                myClass={element.myClass}
-                key={element.eachKey}
-                myClick={this.handleOperation}
-              />
+  return (
+    <div className="mayorContainer">
+      <div className="calContainer">
+        <ShowResult result={showNewTotal()} />
+        <div className="keyContainer">
+          {myKeys.map((element) => (
+            <KeyCalc
+              eachKey={element.eachKey}
+              myClass={element.myClass}
+              key={element.eachKey}
+              myClick={handleOperation}
+            />
 
-            ))}
-          </div>
+          ))}
         </div>
       </div>
-    );
-  }
-}
+    </div>
+  );
+};
+
+export default Calculator;
