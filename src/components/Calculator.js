@@ -16,19 +16,21 @@ ShowResult.defaultProps = { result: 0 };
 ShowResult.propTypes = { result: PropTypes.number };
 
 const KeyCalc = (props) => {
-  const { eachKey, myClass } = props;
+  const { eachKey, myClass, myClick } = props;
   return (
-    <input type="button" className={`eachKey my-${eachKey} ${myClass}`} value={eachKey} onClick={handleOperation} />
+    <input type="button" className={`eachKey my-${eachKey} ${myClass}`} value={eachKey} onClick={myClick} />
   );
 };
 
 KeyCalc.defaultProps = {
   eachKey: '0',
   myClass: 'general',
+  myClick: () => {},
 };
 KeyCalc.propTypes = {
   eachKey: PropTypes.string,
   myClass: PropTypes.string,
+  myClick: PropTypes.func,
 };
 
 export default class Calculator extends React.Component {
@@ -38,7 +40,7 @@ export default class Calculator extends React.Component {
       total: null,
       next: null,
       operation: null,
-    }
+    };
     this.myKeys = [
       {
         eachKey: 'AC',
@@ -127,14 +129,27 @@ export default class Calculator extends React.Component {
     ];
   }
 
+  handleOperation = (e) => {
+    if (e.target.classList.contains('number')) {
+      console.log(e.target);
+    }
+  };
+
   render() {
+    const { total, next, operation } = this.state;
     return (
       <div className="mayorContainer">
         <div className="calContainer">
-          <ShowResult />
+          <ShowResult result={total} />
           <div className="keyContainer">
             {this.myKeys.map((element) => (
-              <KeyCalc eachKey={element.eachKey} myClass={element.myClass} key={element.eachKey} />
+              <KeyCalc
+                eachKey={element.eachKey}
+                myClass={element.myClass}
+                key={element.eachKey}
+                myClick={this.handleOperation}
+              />
+
             ))}
           </div>
         </div>
