@@ -12,8 +12,8 @@ const ShowResult = (props) => {
   );
 };
 
-ShowResult.defaultProps = { result: 0 };
-ShowResult.propTypes = { result: PropTypes.number };
+ShowResult.defaultProps = { result: '0' };
+ShowResult.propTypes = { result: PropTypes.string };
 
 const KeyCalc = (props) => {
   const { eachKey, myClass, myClick } = props;
@@ -130,17 +130,28 @@ export default class Calculator extends React.Component {
   }
 
   handleOperation = (e) => {
-    if (e.target.classList.contains('number')) {
-      console.log(e.target);
+    const updatedState = calculate(this.state, e.target.value);
+    console.log(updatedState);
+    this.setState(updatedState);
+  };
+ 
+  showNewTotal = () => {
+    const { total, next } = this.state;
+    if (total === null && next === null) { 
+      return '0';
     }
+    if (next === null) {
+      return total;
+    }
+    return next;
   };
 
   render() {
-    const { total, next, operation } = this.state;
+    const newValue = this.showNewTotal();  
     return (
       <div className="mayorContainer">
         <div className="calContainer">
-          <ShowResult result={total} />
+          <ShowResult result={newValue} />
           <div className="keyContainer">
             {this.myKeys.map((element) => (
               <KeyCalc
