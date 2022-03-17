@@ -131,13 +131,12 @@ export default class Calculator extends React.Component {
 
   handleOperation = (e) => {
     const updatedState = calculate(this.state, e.target.value);
-    console.log(updatedState);
     this.setState(updatedState);
   };
- 
+
   showNewTotal = () => {
     const { total, next } = this.state;
-    if (total === null && next === null) { 
+    if (total === null && next === null) {
       return '0';
     }
     if (next === null) {
@@ -147,7 +146,7 @@ export default class Calculator extends React.Component {
   };
 
   render() {
-    const newValue = this.showNewTotal();  
+    const newValue = this.showNewTotal();
     return (
       <div className="mayorContainer">
         <div className="calContainer">
