@@ -10,12 +10,12 @@ import Quote from './pages/Quote';
 function App() {
   return (
     <Router>
-      <nav>
-        <Link to='/'>Math Magicians</Link>
-        <div>
-          <Link to='/'>Home</Link>
-          <Link to='/calculator'>Calculator</Link>
-          <Link to='/quote'>Quote</Link>
+      <nav className='my-nav'>
+        <Link to='/' className='my-logo'>Math Magicians</Link>
+        <div className='link-container'>
+          <Link className='my-link' to='/'>Home</Link>
+          <Link className='my-link' to='/calculator'>Calculator</Link>
+          <Link className='my-link' to='/quote'>Quote</Link>
         </div>
       </nav>
       <Routes>
