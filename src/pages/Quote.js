@@ -2,7 +2,10 @@ import React from 'react';
 
 const Quote = () => {
   return (
-    <p>This is the quote</p>
+    <div>
+      <p>Pure mathematics is, in its way, the poetry of logical ideas.
+      </p>
+    </div>
   );
 }
 
