@@ -1,14 +1,28 @@
 .my-nav {
   display: flex;
   justify-content: space-between;
-  padding: 2rem;
+  padding: 2rem 4rem;
   align-items: flex-end;
 }
 
 .my-logo {
   font-size: 2rem;
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
 }
 
 .my-link {
   padding: 0.5rem;
+  font-weight: 600;
+}
+
+.homepage,
+.quote-page {
+  padding: 4rem;
+}
+
+.quote {
+  font-size: 1.5rem;
+  font-weight: bold;
 }

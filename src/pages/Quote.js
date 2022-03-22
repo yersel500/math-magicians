@@ -1,12 +1,15 @@
 import React from 'react';
 
-const Quote = () => {
-  return (
-    <div>
-      <p>Pure mathematics is, in its way, the poetry of logical ideas.
-      </p>
-    </div>
-  );
-}
+const Quote = () => (
+  <div className="quote-page">
+    <p className="quote">
+      Mathematics as an expression of the human mind reflects
+      the active will, the contemplative reason, and the desire
+      for aesthetic perfection. Its basic elements are logic and intuition,
+      analysis and construction, generality and individuality.
+      — Richard Courant, German-American mathematician
+    </p>
+  </div>
+);
 
 export default Quote;
