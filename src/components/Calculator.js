@@ -145,6 +145,9 @@ const Calculator = () => {
 
   return (
     <div className="mayorContainer">
+      <div>
+        <h2>Let&apos;s do some math!</h2>
+      </div>
       <div className="calContainer">
         <ShowResult result={showNewTotal()} />
         <div className="keyContainer">
