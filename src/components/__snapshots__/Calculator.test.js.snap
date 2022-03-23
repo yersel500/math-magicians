@@ -1,0 +1,144 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`The calculator renders correctly 1`] = `
+<div
+  className="mayorContainer"
+>
+  <div>
+    <h2>
+      Let's do some math!
+    </h2>
+  </div>
+  <div
+    className="calContainer"
+  >
+    <div
+      className="result-container"
+    >
+      <p
+        className="result"
+      >
+        0
+      </p>
+    </div>
+    <div
+      className="keyContainer"
+    >
+      <input
+        className="eachKey my-AC general"
+        onClick={[Function]}
+        type="button"
+        value="AC"
+      />
+      <input
+        className="eachKey my-+/- general"
+        onClick={[Function]}
+        type="button"
+        value="+/-"
+      />
+      <input
+        className="eachKey my-% general"
+        onClick={[Function]}
+        type="button"
+        value="%"
+      />
+      <input
+        className="eachKey my-÷ operator"
+        onClick={[Function]}
+        type="button"
+        value="÷"
+      />
+      <input
+        className="eachKey my-7 number"
+        onClick={[Function]}
+        type="button"
+        value="7"
+      />
+      <input
+        className="eachKey my-8 number"
+        onClick={[Function]}
+        type="button"
+        value="8"
+      />
+      <input
+        className="eachKey my-9 number"
+        onClick={[Function]}
+        type="button"
+        value="9"
+      />
+      <input
+        className="eachKey my-x operator"
+        onClick={[Function]}
+        type="button"
+        value="x"
+      />
+      <input
+        className="eachKey my-4 number"
+        onClick={[Function]}
+        type="button"
+        value="4"
+      />
+      <input
+        className="eachKey my-5 number"
+        onClick={[Function]}
+        type="button"
+        value="5"
+      />
+      <input
+        className="eachKey my-6 number"
+        onClick={[Function]}
+        type="button"
+        value="6"
+      />
+      <input
+        className="eachKey my-- operator"
+        onClick={[Function]}
+        type="button"
+        value="-"
+      />
+      <input
+        className="eachKey my-1 number"
+        onClick={[Function]}
+        type="button"
+        value="1"
+      />
+      <input
+        className="eachKey my-2 number"
+        onClick={[Function]}
+        type="button"
+        value="2"
+      />
+      <input
+        className="eachKey my-3 number"
+        onClick={[Function]}
+        type="button"
+        value="3"
+      />
+      <input
+        className="eachKey my-+ operator"
+        onClick={[Function]}
+        type="button"
+        value="+"
+      />
+      <input
+        className="eachKey my-0 number"
+        onClick={[Function]}
+        type="button"
+        value="0"
+      />
+      <input
+        className="eachKey my-. general"
+        onClick={[Function]}
+        type="button"
+        value="."
+      />
+      <input
+        className="eachKey my-= operator"
+        onClick={[Function]}
+        type="button"
+        value="="
+      />
+    </div>
+  </div>
+</div>
+`;
