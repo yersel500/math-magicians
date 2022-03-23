@@ -16,4 +16,8 @@ describe('Test to operator function', () => {
   test('Fourth test operate', () => {
     expect(operate('9', '3', 'x')).toBe('27');
   });
+
+  test('Fifth test operate', () => {
+    expect(operate('4', '2', '%')).toBe('0');
+  });
 });
