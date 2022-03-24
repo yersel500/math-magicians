@@ -1,0 +1,44 @@
+.mayorContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 2rem 4rem;
+  height: 75vh;
+}
+
+.calContainer {
+  width: 50%;
+  height: 70%;
+}
+
+.result-container {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  background-color: rgb(165, 163, 163);
+}
+
+.result {
+  color: #fff;
+  padding: 1rem;
+}
+
+.keyContainer {
+  display: grid;
+  justify-items: stretch;
+  align-items: stretch;
+  align-content: stretch;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: auto auto auto auto auto;
+  height: 100%;
+}
+
+.my-0 {
+  grid-column-start: 1;
+  grid-column-end: 3;
+}
+
+.operator {
+  background-color: #f5913e;
+}
