@@ -14,7 +14,7 @@
 
 ### Option 1: [Heroku - Math Magicians Live](https://math-magicians-yersel.herokuapp.com/)
 
-### Option 1: [Netlify - Math Magicians Live](https://lambent-alpaca-1ebdc2.netlify.app/)
+### Option 1: [Netlify - Math Magicians Live](https://incomparable-peony-82a50e.netlify.app/calculator)
 
 In the project directory, to see the live demo you can run:
 
